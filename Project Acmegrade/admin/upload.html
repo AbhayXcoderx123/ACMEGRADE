@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<head>
+   
+    <style>
+        form
+        {
+           background-color: greenyellow;
+           height: 550px;
+           width: 362px;
+           margin: 117px 508px;
+           padding: 20px;
+           border-radius: 6px;
+           border: 1px solid #02020e;
+
+        }   
+        
+       body
+       {
+           background-image: url("https://img.freepik.com/premium-vector/e-commerce-icon-robotic-hand-internet-shopping-online-purchase-add-cart_127544-586.jpg?w=826.jpg");
+           background-size: cover;
+       }
+       input, textarea
+       {
+           margin: 3px -6px;
+           width: 104%;
+           display: inline-block;
+           padding: 2px 4px;
+           box-sizing: border-box;
+           border: 2px solid #567227;
+        }
+        h1
+        {
+            font-size:35px;
+        }
+        .mid
+        {
+            display:block;
+            width:33%;
+            margin:12px auto;
+        }
+        .navbar li
+        {
+            display:inline-block;
+        }
+        .navbar li a
+        {
+            color:white;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mid">
+        <ul class="navbar">
+            <li><a href="upload.html"><button type="button" class="btn btn-outline-info">Add Products</button></a></li>
+            <li><a href="view.php"><button type="button" class="btn btn-outline-info">View Products</button></a></li>
+            <li><a href="#"><View type="button" class="btn btn-outline-info">View Orders</button></a></li>
+        </ul>
+    </div>
+
+
+    <form action="upload.php" enctype="multipart/form-data" method="post">
+        
+            <center><h1>ADD PRODUCT</h1></center>
+            <input type="text" name="name" placeholder="Product Name">
+            <br>
+            <input type="text" name="price" placeholder="Product price">
+            <br>
+            <textarea name="details" id="" cols="30" rows="10" placeholder="Product Description"></textarea>
+            <br>
+            <input type="file" class="btn btn-outline-secondary" name="imname" accept=".jpg,.png">
+            <br>
+            <input class="btn btn-primary" type="submit" value="Upload">
+        
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body
+        {
+            font-family: Calibri, Helvetica, sans-serif;
+            background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%); 
+        }
+        form
+        {
+            background-color: white;
+            width: fit-content;
+            padding: 0px;
+            margin: 98px 500px;
+
+        }
+        input
+        {
+            display:block;
+            padding:10px;
+            margin:20px;
+        }
+        .container
+        {
+            padding:23px;
+            border-radius: 1px;
+            margin:0px;
+            border:2px solid;
+        }
+        input[type=text], input[type=password], input[type=number]
+        {   
+          width: 100%;   
+          margin: 8px 0;  
+          padding: 12px 20px;   
+          display: inline-block;   
+          border: 2px solid #567227;   
+          box-sizing: border-box;
+        }
+
+    </style>
+   
+</head>
+<body>
+
+    <form action="registration.php" onsubmit="return validate()" method="POST">
+       <div class="container">
+        <center><h1>Registration</h1></center>
+        <input name="uname" type="text" id="uname" placeholder="Enter username" required pattern="[a-z]{3,10}" title="Username should not contain any numbers" onchange="usernameValidation()">
+        <input name="pass1" type="password" placeholder="Enter Password" id="pass1" required>
+        <input name="pass2" type="password" placeholder="Retype Password" id="pass2" required>
+        <input name="mobile" type="number" placeholder="Enter Mobile Number" required>
+        <center><input type="Submit" class="btn btn-danger"></center>
+       </div>
+    </form>
+
+    <script>
+        function usernameValidation()
+        {
+            uname=document.getElementById('uname').value
+            if(uname==='admin')
+            {
+                alert('Admin is reserved Username');
+                return false;
+            }
+        }    
+        function validate()
+        {
+            
+            uname=document.getElementById('uname').value
+            if(uname==='admin')
+            {
+                alert('Admin is reserved Username');
+                return false;
+            }
+
+            pass1=document.getElementById('pass1').value
+            pass2=document.getElementById('pass2').value
+            if(pass1===pass2)
+            {
+                return true;
+            }
+            else
+            {
+                alert('Password Mismatch');
+                return false;
+            }
+        }
+    </script>
+    
+</body>
+</html>
